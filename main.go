@@ -43,5 +43,14 @@ func main() {
 	// post request
 	app.Post("/signup", handler.SignUp)
 
+	// get user by id
+	app.Get("/user/:id", handler.GetUserByID)
+
+	// update the user information
+	app.Put("/user/:id", handler.UpdateUser)
+
+	// delete the user
+	app.Delete("/user/:id", handler.DeleteUser)
+
 	log.Fatal(app.Listen(":3000"))
 }
